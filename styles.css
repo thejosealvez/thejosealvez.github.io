@@ -109,13 +109,14 @@ section {
 .about-section {
     display: flex;
     align-items: flex-end;
-    gap: 35px;
+    gap: 50px;
 }
 
 .about-photo {
     width: 320px;
     height: 420px;
     object-fit: cover;
+    object-position: 42% center;
     border-radius: 12px;
     flex-shrink: 0;
 }

@@ -101,12 +101,25 @@ text-decoration: underline;
 }
 
 .about-card {
-background-color: white;
-padding: 30px;
-border-radius: 12px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-line-height: 1.7;
-font-size: 18px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.about-layout {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .interests-card {
@@ -246,6 +259,15 @@ margin-bottom: 18px;
 padding: 22px;
 font-size: 16px;
 border-radius: 14px;
+}
+.about-layout {
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-photo {
+  width: 180px;
+  height: 180px;
 }
 
 .interests-card p,

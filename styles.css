@@ -83,6 +83,17 @@
       color: #ffd700;
     }
 
+footer .footer-links a,
+footer .footer-links a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+footer .footer-links a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
     .about-card {
       background-color: white;
       padding: 30px;

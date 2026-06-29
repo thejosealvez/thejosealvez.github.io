@@ -108,6 +108,7 @@ section {
 
 .about-section {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   gap: 35px;
 }
@@ -270,10 +271,10 @@ padding: 22px;
 font-size: 16px;
 border-radius: 14px;
 }
-.about-section {
-  flex-direction: column;
+  .about-section {
+    flex-direction: column;
 }
-
+  
 .about-photo {
   width: 100%;
   height: auto;

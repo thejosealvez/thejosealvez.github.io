@@ -107,19 +107,17 @@ section {
 }
 
 .about-section {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 35px;
+    display: flex;
+    align-items: flex-end;
+    gap: 35px;
 }
 
 .about-photo {
-  width: 320px;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 12px;
-  flex-shrink: 0;
-  margin-top: 85px;
+    width: 320px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
 }
 
 .about-content {

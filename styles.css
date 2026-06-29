@@ -187,6 +187,10 @@ scroll-margin-top: 70px;
 
 @media (max-width: 600px) {
 nav {
+position: sticky;
+top: 0;
+z-index: 1000;
+
 display: flex;
 flex-wrap: nowrap;
 overflow-x: scroll;
@@ -194,6 +198,9 @@ justify-content: flex-start;
 gap: 6px;
 padding: 10px;
 white-space: nowrap;
+
+background-color: #222;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav::-webkit-scrollbar {
@@ -207,6 +214,7 @@ padding: 7px 9px;
 font-size: 12px;
 background-color: #333;
 border-radius: 20px;
+}
 }
 
 header {

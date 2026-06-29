@@ -99,26 +99,26 @@ text-decoration: underline;
 
 @media (max-width: 600px) {
 nav {
-display: flex;
-flex-wrap: nowrap;
-overflow-x: auto;
-justify-content: flex-start;
-gap: 8px;
-padding: 12px;
-white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 10px;
+  white-space: nowrap;
 }
 
 nav::-webkit-scrollbar {
-display: none;
+  display: none;
 }
 
 nav a {
-display: inline-block;
-margin: 0;
-padding: 8px 10px;
-font-size: 14px;
-background-color: #333;
-border-radius: 20px;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 7px 9px;
+  font-size: 12px;
+  background-color: #333;
+  border-radius: 20px;
 }
 
 header {

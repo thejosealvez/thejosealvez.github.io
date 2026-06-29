@@ -113,8 +113,8 @@ section {
 }
 
 .about-photo {
-  width: 420px;
-  height: 520px;
+  width: 320px;
+  height: 420px;
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
@@ -238,7 +238,6 @@ padding: 7px 9px;
 font-size: 12px;
 background-color: #333;
 border-radius: 20px;
-}
 }
 
 header {

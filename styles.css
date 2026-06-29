@@ -97,6 +97,55 @@ color: #0077b5;
 text-decoration: underline;
 }
 
+.contact-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-card h3 {
+  font-size: 28px;
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 140px;
+}
+
+button {
+  justify-self: end;
+  background-color: #222;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+
 @media (max-width: 600px) {
 nav {
   display: flex;

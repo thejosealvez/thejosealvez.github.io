@@ -100,6 +100,30 @@ color: #ffd700;
 text-decoration: underline;
 }
 
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+}
+
+.about-photo {
+  width: 420px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.about-content {
+  flex: 1;
+}
+
 .about-card {
   background-color: white;
   padding: 30px;
@@ -107,19 +131,6 @@ text-decoration: underline;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   line-height: 1.7;
   font-size: 18px;
-}
-
-.about-layout {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.about-photo {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
 }
 
 .interests-card {
@@ -260,16 +271,17 @@ padding: 22px;
 font-size: 16px;
 border-radius: 14px;
 }
-.about-layout {
+.about-section {
   flex-direction: column;
-  text-align: center;
 }
 
 .about-photo {
-  width: 220px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 16px;
+  width: 100%;
+  height: auto;
+}
+
+.about-content {
+  width: 100%;
 }
 
 .interests-card p,

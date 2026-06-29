@@ -1,0 +1,161 @@
+ <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #ffffff;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #555;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 32px;
+      border-bottom: 2px solid #222;
+      padding-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #222;
+      color: white;
+    }
+
+    .about-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    .interests-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    #contact a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    #contact a:visited {
+      color: #222;
+    }
+
+    #contact a:hover {
+      color: #0077b5;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0;
+        padding: 8px 10px;
+        font-size: 14px;
+        background-color: #333;
+        border-radius: 20px;
+      }
+
+      header {
+        padding: 45px 18px;
+      }
+
+      header h1 {
+        font-size: 34px;
+        line-height: 1.1;
+      }
+
+      header p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      section {
+        padding: 32px 16px;
+      }
+
+      section h2 {
+        font-size: 26px;
+        margin-bottom: 18px;
+      }
+
+      .about-card,
+      .interests-card,
+      .contact-card {
+        padding: 22px;
+        font-size: 16px;
+        border-radius: 14px;
+      }
+
+      .interests-card p,
+      .contact-card p {
+        margin: 14px 0;
+      }
+
+      footer {
+        font-size: 14px;
+        padding: 20px;
+      }
+    }
+
+  </style>

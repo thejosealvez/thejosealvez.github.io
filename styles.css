@@ -1,242 +1,252 @@
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+scroll-behavior: smooth;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* {
+box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #222;
-    }
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+color: #222;
+}
 
-    nav {
-      background-color: #222;
-      padding: 15px;
-      text-align: center;
-    }
+nav {
+position: sticky;
+top: 0;
+z-index: 1000;
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
+background-color: #222;
+padding: 15px;
+text-align: center;
 
-    nav a:hover {
-      color: #ffd700;
-    }
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
-    header {
-      text-align: center;
-      padding: 80px 20px;
-      background-color: #ffffff;
-    }
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+font-weight: bold;
+}
 
-    header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
+nav a:hover {
+color: #ffd700;
+}
 
-    header p {
-      font-size: 20px;
-      color: #555;
-    }
+header {
+text-align: center;
+padding: 80px 20px;
+background-color: #ffffff;
+}
 
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+header h1 {
+font-size: 48px;
+margin-bottom: 10px;
+}
 
-    section h2 {
-      font-size: 32px;
-      border-bottom: 2px solid #222;
-      padding-bottom: 10px;
-    }
+header p {
+font-size: 20px;
+color: #555;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background-color: #222;
-      color: white;
-    }
+section {
+padding: 60px 20px;
+max-width: 900px;
+margin: auto;
+}
 
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
+section h2 {
+font-size: 32px;
+border-bottom: 2px solid #222;
+padding-bottom: 10px;
+}
 
-    footer a:visited {
-      color: white;
-    }
+footer {
+text-align: center;
+padding: 25px;
+background-color: #222;
+color: white;
+}
 
-    footer a:hover {
-      color: #ffd700;
-      text-decoration: underline;
-    }
+footer a {
+color: white;
+text-decoration: none;
+}
 
-    footer a:active {
-      color: #ffd700;
-    }
+footer a:visited {
+color: white;
+}
+
+footer a:hover {
+color: #ffd700;
+text-decoration: underline;
+}
+
+footer a:active {
+color: #ffd700;
+}
 
 footer .footer-links a,
 footer .footer-links a:visited {
-  color: white;
-  text-decoration: none;
+color: white;
+text-decoration: none;
 }
 
 footer .footer-links a:hover {
-  color: #ffd700;
-  text-decoration: underline;
+color: #ffd700;
+text-decoration: underline;
 }
 
-    .about-card {
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      line-height: 1.7;
-      font-size: 18px;
-    }
+.about-card {
+background-color: white;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+line-height: 1.7;
+font-size: 18px;
+}
 
-    .interests-card {
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      line-height: 1.7;
-      font-size: 18px;
-    }
+.interests-card {
+background-color: white;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+line-height: 1.7;
+font-size: 18px;
+}
 
-    #contact a {
-      color: #222;
-      text-decoration: none;
-    }
+#contact a {
+color: #222;
+text-decoration: none;
+}
 
-    #contact a:visited {
-      color: #222;
-    }
+#contact a:visited {
+color: #222;
+}
 
-    #contact a:hover {
-      color: #0077b5;
-      text-decoration: underline;
-    }
+#contact a:hover {
+color: #0077b5;
+text-decoration: underline;
+}
 
-    .contact-card {
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
+.contact-card {
+background-color: white;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 
-    .contact-card h3 {
-      font-size: 28px;
-      margin-top: 0;
-    }
+.contact-card h3 {
+font-size: 28px;
+margin-top: 0;
+}
 
-    form {
-      display: grid;
-      gap: 15px;
-    }
+form {
+display: grid;
+gap: 15px;
+}
 
-    label {
-      font-weight: bold;
-    }
+label {
+font-weight: bold;
+}
 
-    input,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #999;
-      border-radius: 6px;
-      font-size: 16px;
-    }
+input,
+textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #999;
+border-radius: 6px;
+font-size: 16px;
+}
 
-    textarea {
-      min-height: 140px;
-    }
+textarea {
+min-height: 140px;
+}
 
-    button {
-      justify-self: end;
-      background-color: #222;
-      color: white;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+button {
+justify-self: end;
+background-color: #222;
+color: white;
+padding: 14px 28px;
+border: none;
+border-radius: 8px;
+font-weight: bold;
+cursor: pointer;
+}
 
-    button:hover {
-      background-color: #444;
-    }
+button:hover {
+background-color: #444;
+}
 
-    @media (max-width: 600px) {
-      nav {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        justify-content: flex-start;
-        gap: 6px;
-        padding: 10px;
-        white-space: nowrap;
-      }
+section {
+scroll-margin-top: 70px;
+}
 
-      nav::-webkit-scrollbar {
-        display: none;
-      }
+@media (max-width: 600px) {
+nav {
+display: flex;
+flex-wrap: nowrap;
+overflow-x: scroll;
+justify-content: flex-start;
+gap: 6px;
+padding: 10px;
+white-space: nowrap;
+}
 
-      nav a {
-        flex: 0 0 auto;
-        margin: 0;
-        padding: 7px 9px;
-        font-size: 12px;
-        background-color: #333;
-        border-radius: 20px;
-      }
+nav::-webkit-scrollbar {
+display: none;
+}
 
-      header {
-        padding: 45px 18px;
-      }
+nav a {
+flex: 0 0 auto;
+margin: 0;
+padding: 7px 9px;
+font-size: 12px;
+background-color: #333;
+border-radius: 20px;
+}
 
-      header h1 {
-        font-size: 34px;
-        line-height: 1.1;
-      }
+header {
+padding: 45px 18px;
+}
 
-      header p {
-        font-size: 16px;
-        line-height: 1.5;
-      }
+header h1 {
+font-size: 34px;
+line-height: 1.1;
+}
 
-      section {
-        padding: 32px 16px;
-      }
+header p {
+font-size: 16px;
+line-height: 1.5;
+}
 
-      section h2 {
-        font-size: 26px;
-        margin-bottom: 18px;
-      }
+section {
+padding: 32px 16px;
+}
 
-      .about-card,
-      .interests-card,
-      .contact-card {
-        padding: 22px;
-        font-size: 16px;
-        border-radius: 14px;
-      }
+section h2 {
+font-size: 26px;
+margin-bottom: 18px;
+}
 
-      .interests-card p,
-      .contact-card p {
-        margin: 14px 0;
-      }
+.about-card,
+.interests-card,
+.contact-card {
+padding: 22px;
+font-size: 16px;
+border-radius: 14px;
+}
 
-      footer {
-        font-size: 14px;
-        padding: 20px;
-      }
-    }
+.interests-card p,
+.contact-card p {
+margin: 14px 0;
+}
+
+footer {
+font-size: 14px;
+padding: 20px;
+}
+}

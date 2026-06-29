@@ -1,2 +1,2 @@
-# josealvez.github.io
+# thejosealvez.github.io
 My personal website

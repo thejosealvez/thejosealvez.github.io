@@ -273,6 +273,11 @@ scroll-margin-top: 70px;
   line-height: 1.5;
 }
 
+.interest-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media (max-width: 600px) {
 nav {
 position: sticky;

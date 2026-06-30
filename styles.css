@@ -52,12 +52,6 @@ font-size: 20px;
 color: #555;
 }
 
-section {
-padding: 60px 20px;
-max-width: 900px;
-margin: auto;
-}
-
 section h2 {
 font-size: 32px;
 border-bottom: 2px solid #222;
@@ -89,21 +83,11 @@ footer a:active {
 color: #ffd700;
 }
 
-footer .footer-links a,
-footer .footer-links a:visited {
-color: white;
-text-decoration: none;
-}
-
-footer .footer-links a:hover {
-color: #ffd700;
-text-decoration: underline;
-}
-
 section {
   padding: 60px 20px;
   max-width: 1200px;
   margin: auto;
+  scroll-margin-top: 70px;
 }
 
 .about-section {
@@ -197,10 +181,6 @@ button:hover {
 background-color: #444;
 }
 
-section {
-scroll-margin-top: 70px;
-}
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -245,7 +225,7 @@ scroll-margin-top: 70px;
 }
 
 .card p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -307,7 +287,6 @@ margin-bottom: 18px;
 .contact-card,
 .card {
   padding: 22px;
-  font-size: 16px;
   border-radius: 14px;
 }
   

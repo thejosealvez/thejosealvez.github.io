@@ -116,7 +116,7 @@ section {
     width: 320px;
     height: 420px;
     object-fit: cover;
-    object-position: 42% center;
+    object-position: 36% center;
     border-radius: 12px;
     flex-shrink: 0;
 }

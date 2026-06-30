@@ -4,7 +4,335 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jose Alvez</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #222;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #ffffff;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #555;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 32px;
+      border-bottom: 2px solid #222;
+      padding-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #222;
+      color: white;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:visited {
+      color: white;
+    }
+
+    footer a:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+
+    footer a:active {
+      color: #ffd700;
+    }
+
+    footer .footer-links a,
+    footer .footer-links a:visited {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer .footer-links a:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about-section {
+      display: flex;
+      align-items: flex-end;
+      gap: 50px;
+    }
+
+    .about-photo {
+      width: 320px;
+      height: 420px;
+      object-fit: cover;
+      object-position: 36% center;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .about-content {
+      flex: 1;
+    }
+
+    .about-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .interest-card {
+      background-color: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      color: #222;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .interest-card:visited {
+      color: #222;
+    }
+
+    .interest-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+    }
+
+    .interest-card span {
+      font-size: 32px;
+    }
+
+    .interest-card h3 {
+      margin: 12px 0 8px;
+    }
+
+    .interest-card p {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    #contact a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    #contact a:visited {
+      color: #222;
+    }
+
+    #contact a:hover {
+      color: #0077b5;
+      text-decoration: underline;
+    }
+
+    .contact-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-card h3 {
+      font-size: 28px;
+      margin-top: 0;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #999;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 140px;
+    }
+
+    button {
+      justify-self: end;
+      background-color: #222;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    section {
+      scroll-margin-top: 70px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        justify-content: flex-start;
+        gap: 6px;
+        padding: 10px;
+        white-space: nowrap;
+        background-color: #222;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav a {
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 7px 9px;
+        font-size: 12px;
+        background-color: #333;
+        border-radius: 20px;
+      }
+
+      header {
+        padding: 45px 18px;
+      }
+
+      header h1 {
+        font-size: 34px;
+        line-height: 1.1;
+      }
+
+      header p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      section {
+        padding: 32px 16px;
+      }
+
+      section h2 {
+        font-size: 26px;
+        margin-bottom: 18px;
+      }
+
+      .about-card,
+      .interests-card,
+      .contact-card {
+        padding: 22px;
+        font-size: 16px;
+        border-radius: 14px;
+      }
+
+      .about-section {
+        flex-direction: column;
+      }
+
+      .about-photo {
+        width: 100%;
+        height: auto;
+      }
+
+      .about-content {
+        width: 100%;
+      }
+
+      .interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .interests-card p,
+      .contact-card p {
+        margin: 14px 0;
+      }
+
+      footer {
+        font-size: 14px;
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -23,74 +351,74 @@
     <p>Learning. Exploring. Building.</p>
   </header>
 
-<section id="about">
-  <div class="about-section">
+  <section id="about">
+    <div class="about-section">
 
-    <img src="horseback.jpg" alt="Jose on horseback" class="about-photo">
+      <img src="horseback.jpg" alt="Jose on horseback" class="about-photo">
 
-    <div class="about-content">
-      <h2>About Me</h2>
+      <div class="about-content">
+        <h2>About Me</h2>
 
-      <div class="about-card">
-        <p>Hi, I'm Jose.</p>
+        <div class="about-card">
+          <p>Hi, I'm Jose.</p>
 
-        <p>
-          I'm someone who's naturally curious and enjoys understanding how the world works.
-          Whether it's history, languages, technology, or geography, I love exploring new ideas
-          and challenging myself to learn something new.
-        </p>
+          <p>
+            I'm someone who's naturally curious and enjoys understanding how the world works.
+            Whether it's history, languages, technology, or geography, I love exploring new ideas
+            and challenging myself to learn something new.
+          </p>
 
-        <p>
-          When I'm not reading or working on a project, I enjoy spending time outdoors.
-          You'll often find me kayaking through South Florida, visiting the beach or the springs,
-          traveling, or planning my next adventure.
-        </p>
+          <p>
+            When I'm not reading or working on a project, I enjoy spending time outdoors.
+            You'll often find me kayaking through South Florida, visiting the beach or the springs,
+            traveling, or planning my next adventure.
+          </p>
 
-        <p>
-          This website is a place where I can document that journey. As I continue learning web
-          development, I'll share my projects, travels, and the things I'm learning along the way.
-        </p>
+          <p>
+            This website is a place where I can document that journey. As I continue learning web
+            development, I'll share my projects, travels, and the things I'm learning along the way.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="interests">
+    <h2>Interests</h2>
+
+    <div class="interests-grid">
+      <div class="interest-card">
+        <span>📚</span>
+        <h3>History</h3>
+        <p>Learning how the past shaped the world we live in.</p>
+      </div>
+
+      <div class="interest-card">
+        <span>🌎</span>
+        <h3>Languages</h3>
+        <p>Exploring how language connects people and cultures.</p>
+      </div>
+
+      <div class="interest-card">
+        <span>💪</span>
+        <h3>Fitness</h3>
+        <p>Building discipline, strength, and consistency.</p>
+      </div>
+
+      <div class="interest-card">
+        <span>✈️</span>
+        <h3>Travel</h3>
+        <p>Discovering new places, cultures, and perspectives.</p>
+      </div>
+
+      <div class="interest-card">
+        <span>💻</span>
+        <h3>Technology</h3>
+        <p>Learning web development and building digital projects.</p>
       </div>
     </div>
-
-  </div>
-</section>
-
-<section id="interests">
-  <h2>Interests</h2>
-
-  <div class="interests-grid">
-    <a href="#travel" class="interest-card">
-      <span>📚</span>
-      <h3>History</h3>
-      <p>Learning how the past shaped the world we live in.</p>
-    </a>
-
-    <a href="#travel" class="interest-card">
-      <span>🌎</span>
-      <h3>Languages</h3>
-      <p>Exploring how language connects people and cultures.</p>
-    </a>
-
-    <a href="#projects" class="interest-card">
-      <span>💪</span>
-      <h3>Fitness</h3>
-      <p>Building discipline, strength, and consistency.</p>
-    </a>
-
-    <a href="#travel" class="interest-card">
-      <span>✈️</span>
-      <h3>Travel</h3>
-      <p>Discovering new places, cultures, and perspectives.</p>
-    </a>
-
-    <a href="#projects" class="interest-card">
-      <span>💻</span>
-      <h3>Technology</h3>
-      <p>Learning web development and building digital projects.</p>
-    </a>
-  </div>
-</section>
+  </section>
 
   <section id="projects">
     <h2>Projects</h2>

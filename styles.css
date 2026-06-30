@@ -240,6 +240,39 @@ section {
 scroll-margin-top: 70px;
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.14);
+}
+
+.card span {
+  font-size: 32px;
+}
+
+.card h3 {
+  margin: 12px 0 8px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 @media (max-width: 600px) {
 nav {
 position: sticky;

@@ -249,6 +249,38 @@ button:hover {
   line-height: 1.5;
 }
 
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.artist-card {
+  background-color: white;
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.artist-card h3 {
+  margin-top: 0;
+}
+
+.artist-card h4 {
+  margin-bottom: 10px;
+}
+
+.artist-card ul {
+  text-align: left;
+  padding-left: 22px;
+  margin-bottom: 22px;
+}
+
+.artist-card li {
+  margin-bottom: 6px;
+}
+
 @media (max-width: 600px) {
   nav {
     position: sticky;
@@ -331,6 +363,10 @@ button:hover {
     margin: 14px 0;
   }
 
+  .artist-grid {
+  grid-template-columns: 1fr;
+}
+  
   footer {
     font-size: 14px;
     padding: 20px;

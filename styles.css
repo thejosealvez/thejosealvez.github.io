@@ -25,7 +25,8 @@ nav {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-nav a {
+nav a,
+nav a:visited {
   color: white;
   text-decoration: none;
   margin: 0 15px;
@@ -262,7 +263,7 @@ button:hover {
   background-color: white;
   padding: 26px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
@@ -286,6 +287,46 @@ button:hover {
 
 .artist-card .button-link {
   margin-top: auto;
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.playlist-link,
+.playlist-link:visited {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.65rem 1rem;
+  color: #fff;
+  background-color: #d62828;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.playlist-link:hover,
+.playlist-link:active {
+  color: #fff;
+  background-color: #b51f1f;
+  text-decoration: none;
+}
+
+.card h3 a,
+.card h3 a:visited,
+.card h3 a:active {
+  color: #222;
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  color: #d62828;
+  text-decoration: none;
 }
 
 @media (max-width: 600px) {
@@ -371,14 +412,11 @@ button:hover {
   }
 
   .artist-grid {
-  grid-template-columns: 1fr;
-}
-  
+    grid-template-columns: 1fr;
+  }
+
   footer {
     font-size: 14px;
     padding: 20px;
   }
 }
-
-/* Redeploy trigger */
-/* Redeploy trigger */

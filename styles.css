@@ -420,68 +420,6 @@ button:hover {
   font-weight: bold;
 }
 
-.tropical-content {
-  display: grid;
-  gap: 12px;
-  padding: 0 24px 24px;
-}
-
-.subgenre {
-  overflow: hidden;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.subgenre > summary {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 44px 14px 16px;
-  background-color: #f4f4f4;
-  color: #222;
-  font-weight: bold;
-  text-align: left;
-  cursor: pointer;
-  list-style: none;
-}
-
-.subgenre-emoji {
-  font-size: 26px;
-}
-
-.subgenre-name {
-  font-size: 17px;
-}
-
-.subgenre > summary::-webkit-details-marker {
-  display: none;
-}
-
-.subgenre > summary::after {
-  content: "+";
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  font-size: 20px;
-}
-
-.subgenre[open] > summary::after {
-  content: "−";
-}
-
-.subgenre > summary:hover {
-  background-color: #e8e8e8;
-}
-
-.subgenre-playlists {
-  display: grid;
-  gap: 10px;
-  padding: 12px;
-  border-top: 1px solid #ddd;
-}
-
 @media (max-width: 600px) {
   nav {
     position: sticky;

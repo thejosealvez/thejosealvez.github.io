@@ -420,6 +420,87 @@ button:hover {
   font-weight: bold;
 }
 
+/* Featured project */
+
+.featured-project {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-content {
+  padding: 36px;
+}
+
+.project-content h3 {
+  margin: 0 0 16px;
+  font-size: 24px;
+}
+
+.project-content h4 {
+  margin: 22px 0 10px;
+  font-size: 18px;
+}
+
+.project-content p {
+  line-height: 1.6;
+}
+
+.project-content ul {
+  padding-left: 22px;
+  line-height: 1.6;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.technology-list span {
+  padding: 7px 11px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.project-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  padding: 40px;
+  color: white;
+  background: linear-gradient(135deg, #222, #444);
+  text-align: center;
+}
+
+.code-symbol {
+  font-family: monospace;
+  font-size: 72px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.project-visual p {
+  margin-top: 18px;
+  color: #ddd;
+  font-size: 18px;
+}
+
 @media (max-width: 600px) {
   nav {
     position: sticky;
@@ -485,10 +566,6 @@ button:hover {
     padding: 0;
   }
 
-  .tropical-content {
-    padding: 0 22px 22px;
-  }
-
   .about-section {
     flex-direction: column;
   }
@@ -525,5 +602,27 @@ button:hover {
 
   .genre-summary {
     padding: 22px;
+  }
+
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+
+  .project-content {
+    padding: 24px;
+  }
+
+  .project-content h3 {
+    font-size: 22px;
+  }
+
+  .project-links {
+    align-items: stretch;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-visual {
+    min-height: 220px;
   }
 }

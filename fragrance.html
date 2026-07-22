@@ -3,10 +3,11 @@
 
 <head>
   <!-- Metadata -->
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-title" content="Jose Alvez" />
 
-  <title>Music | Jose Alvez</title>
+  <title>Fragrance | Jose Alvez</title>
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
@@ -18,6 +19,32 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
   <link rel="manifest" href="assets/icons/site.webmanifest" />
 </head>
+
+<script>
+  const fragrancePages = document.querySelectorAll(".fragrance-page");
+  const previousArrow = document.querySelector(".previous-arrow");
+  const nextArrow = document.querySelector(".next-arrow");
+  const currentPageDisplay = document.querySelector(
+    "#current-fragrance-page"
+  );
+  let currentPage = 0;
+
+  function showFragrancePage(pageNumber) {
+    fragrancePages.forEach((page, index) => {
+      page.classList.toggle("active", index === pageNumber);
+    });
+    currentPageDisplay.textContent = pageNumber + 1;
+  }
+  nextArrow.addEventListener("click", () => {
+    currentPage = (currentPage + 1) % fragrancePages.length;
+    showFragrancePage(currentPage);
+  });
+  previousArrow.addEventListener("click", () => {
+    currentPage =
+      (currentPage - 1 + fragrancePages.length) % fragrancePages.length;
+    showFragrancePage(currentPage);
+  });
+</script>
 
 <body>
   <!-- ==========================
@@ -31,59 +58,315 @@
     <a href="index.html#contact">Contact</a>
   </nav>
 
- <!-- ==========================
+  <!-- ==========================
          Fragrance
 ========================== -->
 
-   <header>
+  <header>
     <h1>Fragrance</h1>
     <p>Exploring scents, personal style, and the fragrances that fit every mood and occasion.</p>
   </header>
-  
+
   <section>
-  <h2>Why I Enjoy Fragrance</h2>
+    <h2>Why I Enjoy Fragrance</h2>
 
-  <div class="about-card">
-    <p>
-      Fragrance is another way to express personality and create an impression.
-      I enjoy discovering different scent profiles and finding fragrances that
-      fit particular moods, seasons, and occasions.
+    <div class="about-card">
+      <p>
+        Fragrance is another way to express personality and create an impression.
+        I enjoy discovering different scent profiles and finding fragrances that
+        fit particular moods, seasons, and occasions.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Favorites by Occasion</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <span>☀️</span>
+        <h3>Everyday</h3>
+        <p>A fresh and versatile fragrance for regular daytime wear.</p>
+      </div>
+
+      <div class="card">
+        <span>🌙</span>
+        <h3>Evening</h3>
+        <p>A deeper scent for dinners, nights out, and special occasions.</p>
+      </div>
+
+      <div class="card">
+        <span>💼</span>
+        <h3>Work</h3>
+        <p>A clean and subtle fragrance that fits a professional setting.</p>
+      </div>
+
+      <div class="card">
+        <span>❤️</span>
+        <h3>Date Night</h3>
+        <p>A warm and memorable fragrance with a more intimate character.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="decants">
+    <h2>Fragrances Available for Decanting</h2>
+
+    <p class="decant-intro">
+      Explore fragrances from my personal collection that are available as
+      hand-decanted samples. Purchases are not processed directly through this
+      website yet.
     </p>
-  </div>
-</section>
 
-<section>
-  <h2>Favorites by Occasion</h2>
+    <div class="fragrance-slider">
 
-  <div class="card-grid">
-    <div class="card">
-      <span>☀️</span>
-      <h3>Everyday</h3>
-      <p>A fresh and versatile fragrance for regular daytime wear.</p>
+      <button type="button" class="slider-arrow previous-arrow" aria-label="View previous fragrances">
+        &#10094;
+      </button>
+
+      <div class="fragrance-pages">
+
+        <!-- First six fragrances -->
+
+        <div class="fragrance-page active">
+          <div class="fragrance-grid">
+
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Second six fragrances -->
+        <div class="fragrance-page">
+          <div class="fragrance-grid">
+
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+            <div class="fragrance-card">
+              <img src="assets/images/Wanted by Night Azzaro.png" alt="Azzaro Wanted by Night fragrance bottle" class="fragrance-image">
+
+              <p class="product-brand">Azzaro</p>
+              <h3>Wanted by Night</h3>
+              <p class="product-type">Eau de Parfum</p>
+              <p class="product-price">Decants starting at $1,000,000.00</p>
+
+              <p>
+                A bold, sensual woody-spicy fragrance blending cinnamon, red
+                cedar, tobacco, vanilla, and warm smoky notes for evening wear.
+              </p>
+
+              <button type="button" class="decant-button">
+                Request a Decant
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <button type="button" class="slider-arrow next-arrow" aria-label="View next fragrances">
+        &#10095;
+      </button>
+
     </div>
 
-    <div class="card">
-      <span>🌙</span>
-      <h3>Evening</h3>
-      <p>A deeper scent for dinners, nights out, and special occasions.</p>
-    </div>
+    <p class="slider-status">
+      Showing group <span id="current-fragrance-page">1</span> of 2
+    </p>
+  </section>
 
-    <div class="card">
-      <span>💼</span>
-      <h3>Work</h3>
-      <p>A clean and subtle fragrance that fits a professional setting.</p>
-    </div>
-
-    <div class="card">
-      <span>❤️</span>
-      <h3>Date Night</h3>
-      <p>A warm and memorable fragrance with a more intimate character.</p>
-    </div>
-  </div>
-</section>
-  
-
-    <!-- ==========================
+  <!-- ==========================
          Footer
 ========================== -->
   <footer>

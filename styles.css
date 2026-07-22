@@ -501,6 +501,108 @@ button:hover {
   font-size: 18px;
 }
 
+/* Fragrance slider */
+
+.decant-intro {
+  margin-bottom: 24px;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.fragrance-slider {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.fragrance-page {
+  display: none;
+}
+
+.fragrance-page.active {
+  display: block;
+}
+
+.fragrance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.fragrance-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.fragrance-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.product-brand {
+  margin: 18px 0 4px;
+  color: #666;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.fragrance-card h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.product-type {
+  margin: 0 0 8px;
+  color: #666;
+}
+
+.product-price {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.fragrance-card > p:last-of-type {
+  line-height: 1.5;
+}
+
+.decant-button {
+  width: 100%;
+  margin-top: auto;
+}
+
+.slider-arrow {
+  padding: 14px;
+  background-color: #222;
+  color: white;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.slider-arrow:hover {
+  background-color: #444;
+}
+
+.slider-status {
+  margin-top: 18px;
+  color: #555;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
   nav {
     position: sticky;
@@ -624,5 +726,34 @@ button:hover {
 
   .project-visual {
     min-height: 220px;
+  }
+
+  .fragrance-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .fragrance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .slider-arrow {
+    position: static;
+    width: 48px;
+    height: 48px;
+  }
+
+  .previous-arrow {
+    justify-self: start;
+  }
+
+  .next-arrow {
+    justify-self: end;
+  }
+}
+
+/* Tablet styling — this is a separate media block */
+@media (min-width: 601px) and (max-width: 900px) {
+  .fragrance-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

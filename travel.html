@@ -45,41 +45,47 @@
 
     <div class="card-grid">
 
-      <div class="card">
+      <button type="button" class="card destination-card" data-destination="unitedStates">
         <span>🦅</span>
         <h3>United States</h3>
         <p>From Florida's springs and beaches to exploring different corners of the country.</p>
-      </div>
+        <span class="card-prompt">Explore United States →</span>
+      </button>
 
-      <div class="card">
+      <button type="button" class="card destination-card" data-destination="uruguay">
         <span>🧉</span>
         <h3>Uruguay</h3>
         <p>My first experience in South America and a culture I'll always appreciate.</p>
-      </div>
+        <span class="card-prompt">Explore Uruguay →</span>
+      </button>
 
-      <div class="card">
+      <button type="button" class="card destination-card" data-destination="england">
         <span>👑</span>
         <h3>England</h3>
         <p>Walking through history while experiencing one of the world's great cities.</p>
-      </div>
+        <span class="card-prompt">Explore England →</span>
+      </button>
 
-      <div class="card">
+      <button type="button" class="card destination-card" data-destination="france">
         <span>🥐</span>
         <h3>France</h3>
         <p>History, architecture, and another opportunity to experience a different language.</p>
-      </div>
+        <span class="card-prompt">Explore France →</span>
+      </button>
 
-      <div class="card">
+      <button type="button" class="card destination-card" data-destination="switzerland">
         <span>⛰️</span>
         <h3>Switzerland</h3>
         <p>Alpine scenery, picturesque towns, and unforgettable mountain views.</p>
-      </div>
+        <span class="card-prompt">Explore Switzerland →</span>
+      </button>
 
-      <div class="card">
+      <button type="button" class="card destination-card" data-destination="germany">
         <span>🏰</span>
         <h3>Germany</h3>
         <p>Rich history, beautiful cities, and a place that deepened my interest in Europe.</p>
-      </div>
+        <span class="card-prompt">Explore Germany →</span>
+      </button>
 
       <button type="button" class="card destination-card" data-destination="colombia">
         <span>☕</span>
@@ -231,7 +237,6 @@
 
   <script>
     const destinations = {
-      
       colombia: {
         name: "Colombia",
         flag: "🇨🇴",
@@ -254,8 +259,145 @@
         language: "Spanish is the primary language, but accents and expressions vary considerably by region. Medellín and the surrounding Antioquia region are associated with the distinctive Paisa accent and vocabulary.",
         culture: "Colombian culture reflects Indigenous, European, and African influences. Music, food, celebrations, and regional traditions differ throughout the country, from the Caribbean coast to the Andes.",
         highlights: "Medellín, Bogotá, Cartagena, the Coffee Region, Tayrona National Park, and the landscapes surrounding the Andes."
+      },
+      unitedStates: {
+        name: "United States",
+        flag: "🇺🇸",
+        status: "Home",
+        images: [{
+            src: "assets/images/united-states-south-florida.jpg",
+            alt: "Coastal scenery in South Florida"
+          },
+          {
+            src: "assets/images/united-states-florida-springs.jpg",
+            alt: "Freshwater spring in Florida"
+          },
+          {
+            src: "assets/images/united-states-florida-nature.jpg",
+            alt: "Natural landscape in Florida"
+          }
+        ],
+        overview: "The United States is a large and diverse country made up of regions with distinct landscapes, histories, and cultures. I’m based in South Florida, a region shaped by the Atlantic Ocean, the Everglades, the Caribbean, and Latin America.",
+        history: "The country’s history includes Indigenous civilizations, European colonization, independence, territorial expansion, immigration, and continuing social change. Florida’s history reflects Indigenous, Spanish, British, Caribbean, and American influences.",
+        language: "English is the country’s most widely spoken language, but hundreds of languages are used throughout the United States. Spanish is especially prominent in South Florida, where bilingual communication is part of everyday life.",
+        culture: "American culture varies considerably by region. South Florida has a strong Caribbean and Latin American identity influenced by Cuban, Puerto Rican, Colombian, Haitian, and other immigrant communities.",
+        highlights: "South Florida’s beaches and coastal cities, the Everglades, Florida’s freshwater springs, natural areas, and the different parts of the country I’ve had the opportunity to explore."
+      },
+      uruguay: {
+        name: "Uruguay",
+        flag: "🇺🇾",
+        status: "Visited",
+        images: [{
+            src: "assets/images/uruguay-montevideo.jpg",
+            alt: "View of Montevideo, Uruguay"
+          },
+          {
+            src: "assets/images/uruguay-rambla.jpg",
+            alt: "The waterfront Rambla in Uruguay"
+          },
+          {
+            src: "assets/images/uruguay-coast.jpg",
+            alt: "Coastal scenery in Uruguay"
+          }
+        ],
+        overview: "Located between Argentina and Brazil, Uruguay is a small South American country known for its Atlantic coastline, relaxed atmosphere, open landscapes, and strong cultural identity. It was my first experience visiting South America.",
+        history: "Uruguay’s history includes Indigenous peoples, competition between the Spanish and Portuguese empires, independence in the nineteenth century, European immigration, and the development of one of Latin America’s most stable democracies.",
+        language: "Spanish is the primary language. Uruguayans generally speak Rioplatense Spanish, which shares vocabulary, pronunciation, and the use of vos with neighboring Argentina.",
+        culture: "Uruguayan culture is closely associated with mate, asado, football, tango, candombe, and carnival. The country combines European, African, Indigenous, and broader Río de la Plata influences.",
+        highlights: "Montevideo, the Rambla, Colonia del Sacramento, Punta del Este, Uruguay’s Atlantic beaches, and the country’s open countryside."
+      },
+      england: {
+        name: "England",
+        flag: "🇬🇧",
+        status: "Visited",
+        images: [{
+            src: "assets/images/england-london.jpg",
+            alt: "View of London, England"
+          },
+          {
+            src: "assets/images/england-westminster.jpg",
+            alt: "Historic architecture in Westminster"
+          },
+          {
+            src: "assets/images/england-streets.jpg",
+            alt: "A historic street in England"
+          }
+        ],
+        overview: "England is the largest country within the United Kingdom and is known for its historic cities, countryside, cultural influence, and the contrast between centuries-old landmarks and modern life.",
+        history: "England’s history includes Roman rule, Anglo-Saxon kingdoms, the Norman Conquest, the development of Parliament and the monarchy, the Industrial Revolution, and a global empire whose influence remains visible around the world.",
+        language: "English is the primary language, but accents and vocabulary vary considerably across the country. London is especially multilingual, reflecting communities with roots throughout Europe, Asia, Africa, and the Caribbean.",
+        culture: "English culture has influenced literature, music, football, government, and popular entertainment worldwide. Contemporary England combines long-standing traditions with the multicultural identity of cities such as London.",
+        highlights: "London, Westminster, the River Thames, the Tower of London, historic museums, royal landmarks, and the architecture found throughout the city."
+      },
+      france: {
+        name: "France",
+        flag: "🇫🇷",
+        status: "Visited",
+        images: [{
+            src: "assets/images/france-paris.jpg",
+            alt: "View of Paris, France"
+          },
+          {
+            src: "assets/images/france-architecture.jpg",
+            alt: "Historic architecture in France"
+          },
+          {
+            src: "assets/images/france-streets.jpg",
+            alt: "A street scene in France"
+          }
+        ],
+        overview: "France is a Western European country known for its historic cities, regional diversity, architecture, cuisine, art, and far-reaching cultural influence.",
+        history: "France’s history includes Celtic and Roman foundations, powerful monarchies, the French Revolution, the rise of Napoleon, two world wars, and the development of the modern French Republic.",
+        language: "French is the official language, although regional languages and dialects remain part of the country’s identity. France also has multilingual communities shaped by immigration from Europe, Africa, the Caribbean, and Asia.",
+        culture: "French culture is closely associated with cuisine, fashion, art, literature, cinema, and architecture. Traditions and everyday life vary considerably between Paris and the country’s many distinct regions.",
+        highlights: "Paris, the Eiffel Tower, the River Seine, the Louvre, historic neighborhoods, cathedrals, cafés, and the architecture found throughout the city."
+      },
+      switzerland: {
+        name: "Switzerland",
+        flag: "🇨🇭",
+        status: "Visited",
+        images: [{
+            src: "assets/images/switzerland-alps.jpg",
+            alt: "Mountain scenery in the Swiss Alps"
+          },
+          {
+            src: "assets/images/switzerland-town.jpg",
+            alt: "A picturesque town in Switzerland"
+          },
+          {
+            src: "assets/images/switzerland-lake.jpg",
+            alt: "A lake surrounded by mountains in Switzerland"
+          }
+        ],
+        overview: "Switzerland is a landlocked Central European country known for the Alps, clear lakes, historic towns, efficient transportation, and distinct regional identities.",
+        history: "Switzerland developed from a medieval alliance of territories into a federal state established in 1848. Its political neutrality, direct democracy, and strong cantonal system have become central parts of its national identity.",
+        language: "Switzerland has four national languages: German, French, Italian, and Romansh. The language spoken varies by region, with Swiss German being the most widely used in everyday life.",
+        culture: "Swiss culture reflects German, French, Italian, and Alpine influences. Regional traditions remain strong, while the country is also known for watchmaking, chocolate, cheese, winter sports, and outdoor recreation.",
+        highlights: "The Swiss Alps, mountain villages, scenic train routes, lakes, historic city centers, and the dramatic landscapes found throughout the country."
+      },
+      germany: {
+        name: "Germany",
+        flag: "🇩🇪",
+        status: "Visited",
+        images: [{
+            src: "assets/images/germany-city.jpg",
+            alt: "View of a city in Germany"
+          },
+          {
+            src: "assets/images/germany-castle.jpg",
+            alt: "A historic castle in Germany"
+          },
+          {
+            src: "assets/images/germany-architecture.jpg",
+            alt: "Historic architecture in Germany"
+          }
+        ],
+        overview: "Germany is a Central European country known for its regional diversity, historic cities, forests, castles, engineering, and major influence on European culture and politics.",
+        history: "Germany’s history includes Germanic kingdoms, the Holy Roman Empire, unification in 1871, two world wars, division during the Cold War, and reunification in 1990. These events have deeply shaped modern Germany and Europe.",
+        language: "German is the official and most widely spoken language, with accents and dialects that vary considerably by region. Many residents also speak English and languages introduced through migration.",
+        culture: "German culture has made major contributions to philosophy, literature, classical music, science, and engineering. Contemporary life combines regional traditions with modern, multicultural cities.",
+        highlights: "Historic city centers, castles, museums, forests, cathedrals, regional architecture, and landmarks connected to Germany’s complex history."
       }
-
     };
     /* Modal elements */
     const modal = document.querySelector("#destination-modal");

@@ -517,12 +517,19 @@ button:hover {
   gap: 16px;
 }
 
-.fragrance-page {
-  display: none;
+.fragrance-pages {
+  min-width: 0;
+  overflow: hidden;
 }
 
-.fragrance-page.active {
-  display: block;
+.fragrance-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.fragrance-page {
+  flex: 0 0 100%;
+  min-width: 0;
 }
 
 .fragrance-grid {

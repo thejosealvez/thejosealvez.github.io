@@ -5,6 +5,7 @@
   <!-- Metadata -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-title" content="Jose Alvez" />
+  <meta charset="UTF-8">
 
   <title>Travel | Jose Alvez</title>
 
@@ -35,7 +36,7 @@
          Travel
 ========================== -->
   <header>
-    <h1>Travel</h1>
+    <h1>Travel & Culture</h1>
     <p>Exploring cultures, languages, history, and the world.</p>
   </header>
 
@@ -80,17 +81,18 @@
         <p>Rich history, beautiful cities, and a place that deepened my interest in Europe.</p>
       </div>
 
-      <div class="card">
+      <button type="button" class="card destination-card" data-destination="colombia">
         <span>☕</span>
         <h3>Colombia</h3>
         <p>Medellín, culture, mountains, and city energy.</p>
-      </div>
+        <span class="card-prompt">Explore Colombia →</span>
+      </button>
 
     </div>
   </section>
 
   <section>
-    <h2>Places I Want to Visit</h2>
+    <h2>Places I’d Like to Visit</h2>
 
     <div class="card-grid">
 
@@ -144,13 +146,72 @@
     </div>
   </section>
 
-<section>
-  <h2>Travel Gallery</h2>
-  <div class="about-card">
-  <p>Browse photographs from my travels, adventures, and everyday life.</p>
-  <a href="gallery.html" class="button-link">View Gallery</a>
-</div>
-</section>
+  <section>
+    <h2>Travel Gallery</h2>
+    <div class="about-card">
+      <p>Browse photographs from my travels, adventures, and everyday life.</p>
+      <a href="gallery.html" class="button-link">View Gallery</a>
+    </div>
+  </section>
+
+  <dialog class="destination-modal" id="destination-modal">
+    <button type="button" class="modal-close" aria-label="Close destination information">
+      ×
+    </button>
+
+    <div class="destination-modal-content">
+      <div class="destination-slideshow">
+        <img src="" alt="" class="destination-hero" id="destination-image">
+
+        <button type="button" class="destination-image-arrow destination-image-previous" aria-label="View previous destination image">
+          &#10094;
+        </button>
+
+        <button type="button" class="destination-image-arrow destination-image-next" aria-label="View next destination image">
+          &#10095;
+        </button>
+
+        <p class="destination-image-counter">
+          <span id="current-destination-image">1</span>
+          /
+          <span id="total-destination-images">1</span>
+        </p>
+      </div>
+
+      <div class="destination-heading">
+        <div>
+          <p class="destination-status" id="destination-status"></p>
+          <h2 id="destination-name"></h2>
+        </div>
+
+        <p class="destination-flag" id="destination-flag"></p>
+      </div>
+
+      <p class="destination-overview" id="destination-overview"></p>
+
+      <div class="destination-details">
+        <div class="destination-detail">
+          <h3>History</h3>
+          <p id="destination-history"></p>
+        </div>
+
+        <div class="destination-detail">
+          <h3>Language</h3>
+          <p id="destination-language"></p>
+        </div>
+
+        <div class="destination-detail">
+          <h3>Culture</h3>
+          <p id="destination-culture"></p>
+        </div>
+
+        <div class="destination-detail">
+          <h3>Highlights</h3>
+          <p id="destination-highlights"></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
 
   <!-- ==========================
          Footer
@@ -167,6 +228,160 @@
     <p>📍 South Florida</p>
     <p>© 2026 Jose Alvez</p>
   </footer>
+
+  <script>
+    const destinations = {
+      
+      colombia: {
+        name: "Colombia",
+        flag: "🇨🇴",
+        status: "Visited",
+        images: [{
+            src: "assets/images/colombia-medellin.jpg",
+            alt: "View of Medellín, Colombia"
+          },
+          {
+            src: "assets/images/colombia-guatape.jpg",
+            alt: "Colorful buildings in Guatapé, Colombia"
+          },
+          {
+            src: "assets/images/colombia-mountains.jpg",
+            alt: "Mountain landscape in Antioquia, Colombia"
+          }
+        ],
+        overview: "A geographically diverse South American country known for its Caribbean and Pacific coasts, Andean cities, coffee regions, and strong regional identities.",
+        history: "Colombia’s history includes Indigenous civilizations, Spanish colonization, independence in the early nineteenth century, and major political and social changes that continue to shape the country today.",
+        language: "Spanish is the primary language, but accents and expressions vary considerably by region. Medellín and the surrounding Antioquia region are associated with the distinctive Paisa accent and vocabulary.",
+        culture: "Colombian culture reflects Indigenous, European, and African influences. Music, food, celebrations, and regional traditions differ throughout the country, from the Caribbean coast to the Andes.",
+        highlights: "Medellín, Bogotá, Cartagena, the Coffee Region, Tayrona National Park, and the landscapes surrounding the Andes."
+      }
+
+    };
+    /* Modal elements */
+    const modal = document.querySelector("#destination-modal");
+    const closeButton = document.querySelector(".modal-close");
+    const destinationName = document.querySelector("#destination-name");
+    const destinationFlag = document.querySelector("#destination-flag");
+    const destinationStatus = document.querySelector("#destination-status");
+    const destinationImage = document.querySelector("#destination-image");
+    const destinationOverview = document.querySelector(
+      "#destination-overview"
+    );
+    const destinationHistory = document.querySelector(
+      "#destination-history"
+    );
+    const destinationLanguage = document.querySelector(
+      "#destination-language"
+    );
+    const destinationCulture = document.querySelector(
+      "#destination-culture"
+    );
+    const destinationHighlights = document.querySelector(
+      "#destination-highlights"
+    );
+    /* Slideshow elements */
+    const previousImageButton = document.querySelector(
+      ".destination-image-previous"
+    );
+    const nextImageButton = document.querySelector(
+      ".destination-image-next"
+    );
+    const currentImageDisplay = document.querySelector(
+      "#current-destination-image"
+    );
+    const totalImagesDisplay = document.querySelector(
+      "#total-destination-images"
+    );
+    const imageCounter = document.querySelector(
+      ".destination-image-counter"
+    );
+    let currentDestinationImages = [];
+    let currentDestinationImage = 0;
+    let slideshowTimer;
+    /* Display the selected image */
+    function showDestinationImage(imageNumber) {
+      const image = currentDestinationImages[imageNumber];
+      if (!image) {
+        return;
+      }
+      destinationImage.src = image.src;
+      destinationImage.alt = image.alt;
+      currentImageDisplay.textContent = imageNumber + 1;
+      totalImagesDisplay.textContent = currentDestinationImages.length;
+    }
+    /* Start automatic slideshow */
+    function startDestinationSlideshow() {
+      clearInterval(slideshowTimer);
+      if (currentDestinationImages.length > 1) {
+        slideshowTimer = setInterval(() => {
+          currentDestinationImage =
+            (currentDestinationImage + 1) %
+            currentDestinationImages.length;
+          showDestinationImage(currentDestinationImage);
+        }, 4000);
+      }
+    }
+
+    function restartDestinationSlideshow() {
+      clearInterval(slideshowTimer);
+      startDestinationSlideshow();
+    }
+    /* Open destination modal */
+    document.querySelectorAll(".destination-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        const destinationKey = card.dataset.destination;
+        const destination = destinations[destinationKey];
+        if (!destination) {
+          return;
+        }
+        destinationName.textContent = destination.name;
+        destinationFlag.textContent = destination.flag;
+        destinationStatus.textContent = destination.status;
+        destinationOverview.textContent = destination.overview;
+        destinationHistory.textContent = destination.history;
+        destinationLanguage.textContent = destination.language;
+        destinationCulture.textContent = destination.culture;
+        destinationHighlights.textContent = destination.highlights;
+        currentDestinationImages = destination.images;
+        currentDestinationImage = 0;
+        const hasMultipleImages = currentDestinationImages.length > 1;
+        previousImageButton.hidden = !hasMultipleImages;
+        nextImageButton.hidden = !hasMultipleImages;
+        imageCounter.hidden = !hasMultipleImages;
+        showDestinationImage(currentDestinationImage);
+        startDestinationSlideshow();
+        modal.showModal();
+      });
+    });
+    /* Image navigation */
+    nextImageButton.addEventListener("click", () => {
+      currentDestinationImage =
+        (currentDestinationImage + 1) %
+        currentDestinationImages.length;
+      showDestinationImage(currentDestinationImage);
+      restartDestinationSlideshow();
+    });
+    previousImageButton.addEventListener("click", () => {
+      currentDestinationImage =
+        (currentDestinationImage - 1 + currentDestinationImages.length) %
+        currentDestinationImages.length;
+      showDestinationImage(currentDestinationImage);
+      restartDestinationSlideshow();
+    });
+    /* Close modal */
+    closeButton.addEventListener("click", () => {
+      modal.close();
+    });
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.close();
+      }
+    });
+    modal.addEventListener("close", () => {
+      clearInterval(slideshowTimer);
+    });
+  </script>
+
 </body>
 
 </html>

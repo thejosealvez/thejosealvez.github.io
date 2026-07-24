@@ -440,16 +440,23 @@
     let currentDestinationImages = [];
     let currentDestinationImage = 0;
     let slideshowTimer;
-    /* Display the selected image */
+    let imageTransitionTimer;
+    /* Display the selected image with a fade transition */
     function showDestinationImage(imageNumber) {
       const image = currentDestinationImages[imageNumber];
       if (!image) {
         return;
       }
-      destinationImage.src = image.src;
-      destinationImage.alt = image.alt;
-      currentImageDisplay.textContent = imageNumber + 1;
-      totalImagesDisplay.textContent = currentDestinationImages.length;
+      clearTimeout(imageTransitionTimer);
+      destinationImage.classList.add("is-changing");
+      imageTransitionTimer = setTimeout(() => {
+        destinationImage.src = image.src;
+        destinationImage.alt = image.alt;
+        currentImageDisplay.textContent = imageNumber + 1;
+        totalImagesDisplay.textContent =
+          currentDestinationImages.length;
+        destinationImage.classList.remove("is-changing");
+      }, 200);
     }
     /* Start automatic slideshow */
     function startDestinationSlideshow() {
@@ -463,7 +470,7 @@
         }, 4000);
       }
     }
-
+    /* Restart timer after manual navigation */
     function restartDestinationSlideshow() {
       clearInterval(slideshowTimer);
       startDestinationSlideshow();
@@ -486,7 +493,13 @@
         destinationHighlights.textContent = destination.highlights;
         currentDestinationImages = destination.images;
         currentDestinationImage = 0;
-        const hasMultipleImages = currentDestinationImages.length > 1;
+        /* Preload images to make switching smoother */
+        currentDestinationImages.forEach((image) => {
+          const preloadImage = new Image();
+          preloadImage.src = image.src;
+        });
+        const hasMultipleImages =
+          currentDestinationImages.length > 1;
         previousImageButton.hidden = !hasMultipleImages;
         nextImageButton.hidden = !hasMultipleImages;
         imageCounter.hidden = !hasMultipleImages;
@@ -495,7 +508,7 @@
         modal.showModal();
       });
     });
-    /* Image navigation */
+    /* Next image */
     nextImageButton.addEventListener("click", () => {
       currentDestinationImage =
         (currentDestinationImage + 1) %
@@ -503,10 +516,14 @@
       showDestinationImage(currentDestinationImage);
       restartDestinationSlideshow();
     });
+    /* Previous image */
     previousImageButton.addEventListener("click", () => {
       currentDestinationImage =
-        (currentDestinationImage - 1 + currentDestinationImages.length) %
-        currentDestinationImages.length;
+        (
+          currentDestinationImage -
+          1 +
+          currentDestinationImages.length
+        ) % currentDestinationImages.length;
       showDestinationImage(currentDestinationImage);
       restartDestinationSlideshow();
     });
@@ -521,6 +538,8 @@
     });
     modal.addEventListener("close", () => {
       clearInterval(slideshowTimer);
+      clearTimeout(imageTransitionTimer);
+      destinationImage.classList.remove("is-changing");
     });
   </script>
 

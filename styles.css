@@ -810,6 +810,15 @@ button:hover {
   font-size: 13px;
 }
 
+#destination-image {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+#destination-image.is-changing {
+  opacity: 0;
+}
+
 @media (max-width: 600px) {
   nav {
     position: sticky;

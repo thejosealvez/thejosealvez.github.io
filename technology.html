@@ -83,30 +83,42 @@
   <section>
     <h2>Tools I’m Using</h2>
 
-    <div class="card-grid">
-      <div class="card">
-        <span>🌐</span>
-        <h3>HTML</h3>
-        <p>Structuring pages with clear, accessible, and organized content.</p>
-      </div>
+    <div class="tools-grid">
+      <button type="button" class="tool-card" data-tool="html" aria-haspopup="dialog">
+        <span class="tool-emoji">🌐</span>
+        <span class="tool-name">HTML</span>
+        <span class="tool-summary">
+          Structuring pages with clear, accessible, and organized content.
+        </span>
+        <span class="tool-action">Learn more →</span>
+      </button>
 
-      <div class="card">
-        <span>🎨</span>
-        <h3>CSS</h3>
-        <p>Creating responsive layouts and improving the visual design of websites.</p>
-      </div>
+      <button type="button" class="tool-card" data-tool="css" aria-haspopup="dialog">
+        <span class="tool-emoji">🎨</span>
+        <span class="tool-name">CSS</span>
+        <span class="tool-summary">
+          Creating responsive layouts and improving the visual design of websites.
+        </span>
+        <span class="tool-action">Learn more →</span>
+      </button>
 
-      <div class="card">
-        <span>⚙️</span>
-        <h3>JavaScript</h3>
-        <p>My next step for adding more interactive behavior and functionality to websites.</p>
-      </div>
+      <button type="button" class="tool-card" data-tool="javascript" aria-haspopup="dialog">
+        <span class="tool-emoji">⚙️</span>
+        <span class="tool-name">JavaScript</span>
+        <span class="tool-summary">
+          Adding interactive behavior, controls, slideshows, and dynamic content.
+        </span>
+        <span class="tool-action">Learn more →</span>
+      </button>
 
-      <div class="card">
-        <span>🐙</span>
-        <h3>GitHub</h3>
-        <p>Managing code, tracking changes, and publishing projects online.</p>
-      </div>
+      <button type="button" class="tool-card" data-tool="github" aria-haspopup="dialog">
+        <span class="tool-emoji">🐙</span>
+        <span class="tool-name">GitHub</span>
+        <span class="tool-summary">
+          Managing code, tracking changes, and publishing projects online.
+        </span>
+        <span class="tool-action">Learn more →</span>
+      </button>
     </div>
   </section>
 
@@ -119,11 +131,31 @@
         stronger foundation in HTML and CSS. From there, I plan to learn JavaScript
         and create more interactive projects that help me apply what I learn.
       </p>
-       <p>
-      My next focus is developing the fragrance page into a mock e-commerce project, including product listings, decant options, filtering, a shopping cart, and a checkout demonstration.
-       </p> 
+      <p>
+        My next focus is developing the fragrance page into a mock e-commerce project, including product listings, decant options, filtering, a shopping cart, and a checkout demonstration.
+      </p>
     </div>
   </section>
+
+  <!-- Tools modal -->
+  <dialog id="tool-modal" class="tool-modal">
+    <button type="button" class="tool-modal-close" aria-label="Close tool information">
+      &times;
+    </button>
+
+    <div class="tool-modal-heading">
+      <span id="tool-modal-emoji"></span>
+      <h3 id="tool-modal-name"></h3>
+    </div>
+
+    <p id="tool-modal-description"></p>
+
+    <h4>How I’m using it</h4>
+    <p id="tool-modal-usage"></p>
+
+    <h4>Examples from this website</h4>
+    <p id="tool-modal-examples"></p>
+  </dialog>
 
   <!-- ==========================
          Footer
@@ -140,6 +172,73 @@
     <p>📍 South Florida</p>
     <p>© 2026 Jose Alvez</p>
   </footer>
+
+  <script>
+    const tools = {
+      html: {
+        emoji: "🌐",
+        name: "HTML",
+        description: "HTML provides the structure and content for every page on this website.",
+        usage: "I use semantic elements to organize navigation, page headings, content sections, forms, cards, images, and interactive components.",
+        examples: "The contact form, fragrance catalog, playlist sections, travel destination modal, and overall page structure."
+      },
+      css: {
+        emoji: "🎨",
+        name: "CSS",
+        description: "CSS controls the layout, appearance, spacing, colors, and responsive behavior of the website.",
+        usage: "I use Grid, Flexbox, media queries, transitions, and reusable classes to maintain a consistent design across the site.",
+        examples: "Responsive card layouts, mobile navigation, image sliders, modal styling, hover effects, and collapsible genre sections."
+      },
+      javascript: {
+        emoji: "⚙️",
+        name: "JavaScript",
+        description: "JavaScript adds interactive behavior and allows page content to change in response to user actions.",
+        usage: "I use JavaScript to control slideshows, navigation buttons, modal windows, timers, counters, and dynamically displayed information.",
+        examples: "The fragrance slider, travel destination pop-ups, automatic photo slideshows, and manual image controls."
+      },
+      github: {
+        emoji: "🐙",
+        name: "GitHub",
+        description: "GitHub provides a place to store, manage, and publish the website’s source code.",
+        usage: "I use GitHub to keep track of changes, maintain the project repository, and publish the live website through GitHub Pages.",
+        examples: "Version history, repository organization, image assets, website files, and online deployment."
+      }
+    };
+    const toolModal = document.querySelector("#tool-modal");
+    const toolModalClose = document.querySelector(".tool-modal-close");
+    const toolModalEmoji = document.querySelector("#tool-modal-emoji");
+    const toolModalName = document.querySelector("#tool-modal-name");
+    const toolModalDescription = document.querySelector(
+      "#tool-modal-description"
+    );
+    const toolModalUsage = document.querySelector("#tool-modal-usage");
+    const toolModalExamples = document.querySelector(
+      "#tool-modal-examples"
+    );
+    document.querySelectorAll(".tool-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        const selectedTool = tools[card.dataset.tool];
+        if (!selectedTool) {
+          return;
+        }
+        toolModalEmoji.textContent = selectedTool.emoji;
+        toolModalName.textContent = selectedTool.name;
+        toolModalDescription.textContent = selectedTool.description;
+        toolModalUsage.textContent = selectedTool.usage;
+        toolModalExamples.textContent = selectedTool.examples;
+        toolModal.showModal();
+      });
+    });
+    toolModalClose.addEventListener("click", () => {
+      toolModal.close();
+    });
+    toolModal.addEventListener("click", (event) => {
+      if (event.target === toolModal) {
+        toolModal.close();
+      }
+    });
+  </script>
+
 </body>
 
 </html>

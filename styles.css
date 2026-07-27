@@ -1298,6 +1298,11 @@ button:hover {
   .occasion-modal {
     padding: 26px 22px;
   }
+.page-header {
+  min-height: 280px;
+  padding: 60px 18px;
+}
+
 }
 
 /* Tablet styling — this is a separate media block */

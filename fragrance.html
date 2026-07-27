@@ -452,12 +452,16 @@
         imageAlt: "Rose 31 by Le Labo",
         description: "A distinctive woody rose fragrance with warm, spicy depth and a memorable intimate character."
       }
-      Object.values(occasionFragrances).forEach((fragrance) => {
-        const preloadedImage = new Image();
-        preloadedImage.src = fragrance.image;
-      });
     };
-    const occasionModal = document.querySelector("#occasion-modal");
+    /* Preload the four fragrance images */
+    Object.values(occasionFragrances).forEach((fragrance) => {
+      const preloadedImage = new Image();
+      preloadedImage.src = fragrance.image;
+    });
+    /* Occasion modal elements */
+    const occasionModal = document.querySelector(
+      "#occasion-modal"
+    );
     const occasionModalClose = document.querySelector(
       ".occasion-modal-close"
     );
@@ -479,6 +483,7 @@
     const occasionModalImage = document.querySelector(
       "#occasion-modal-image"
     );
+    /* Open the selected fragrance */
     document.querySelectorAll(".occasion-card").forEach((card) => {
       card.addEventListener("click", () => {
         const fragrance =
@@ -498,9 +503,11 @@
         occasionModal.showModal();
       });
     });
+    /* Close the modal with the close button */
     occasionModalClose.addEventListener("click", () => {
       occasionModal.close();
     });
+    /* Close the modal by clicking outside it */
     occasionModal.addEventListener("click", (event) => {
       if (event.target === occasionModal) {
         occasionModal.close();

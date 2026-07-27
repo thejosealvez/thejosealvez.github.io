@@ -1107,14 +1107,31 @@ button:hover {
 }
 
 .technology-header {
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
     url("assets/images/technology-banner.png");
 
   background-position: center 65%;
+}
+
+.travel-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("assets/images/travel-banner.png");
+
+  background-position: center;
+}
+
+.music-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("assets/images/music-banner.png");
+
+  background-position: center;
+}
+
+.fragrance-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("assets/images/fragrance-banner.png");
+
+  background-position: center;
 }
 
 @media (max-width: 600px) {

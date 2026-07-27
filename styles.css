@@ -1100,8 +1100,10 @@ button:hover {
 }
 
 .home-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
     url("assets/images/home-banner.png");
+
+  background-position: center 70%;
 }
 
 @media (max-width: 600px) {
@@ -1298,11 +1300,10 @@ button:hover {
   .occasion-modal {
     padding: 26px 22px;
   }
-.page-header {
-  min-height: 280px;
-  padding: 60px 18px;
-}
-
+  .page-header {
+    min-height: 280px;
+    padding: 60px 18px;
+  }
 }
 
 /* Tablet styling — this is a separate media block */

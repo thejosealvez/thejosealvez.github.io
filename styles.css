@@ -1114,7 +1114,7 @@ button:hover {
     ),
     url("assets/images/technology-banner.png");
 
-  background-position: center 70%;
+  background-position: center 60%;
 }
 
 @media (max-width: 600px) {

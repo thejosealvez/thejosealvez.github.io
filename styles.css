@@ -1134,6 +1134,13 @@ button:hover {
   background-position: center;
 }
 
+.fitness-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("assets/images/fragrance-banner.png");
+
+  background-position: center;
+}
+
 @media (max-width: 600px) {
   nav {
     position: sticky;

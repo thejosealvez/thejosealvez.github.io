@@ -819,6 +819,126 @@ button:hover {
   opacity: 0;
 }
 
+/* Tools section */
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: stretch;
+  min-height: 260px;
+  padding: 24px;
+
+  color: #222;
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-card:hover {
+  color: #222;
+  background-color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.tool-card:focus-visible {
+  outline: 3px solid #ffd700;
+  outline-offset: 3px;
+}
+
+.tool-emoji {
+  font-size: 32px;
+}
+
+.tool-name {
+  margin: 12px 0 8px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.tool-summary {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.tool-action {
+  margin-top: auto;
+  padding-top: 18px;
+  color: #d62828;
+  font-weight: bold;
+}
+
+/* Tools modal */
+
+.tool-modal {
+  width: min(600px, calc(100% - 32px));
+  padding: 32px;
+  color: #222;
+  background-color: white;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
+}
+
+.tool-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.tool-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  padding: 4px 10px;
+  color: #222;
+  background: transparent;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.tool-modal-close:hover {
+  color: #d62828;
+  background: transparent;
+}
+
+.tool-modal-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 35px;
+}
+
+#tool-modal-emoji {
+  font-size: 36px;
+}
+
+.tool-modal-heading h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.tool-modal h4 {
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.tool-modal p {
+  line-height: 1.6;
+}
+
 @media (max-width: 600px) {
   nav {
     position: sticky;
@@ -986,6 +1106,19 @@ button:hover {
 
   .destination-details {
     grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-card {
+    min-height: 230px;
+    padding: 22px;
+  }
+
+  .tool-modal {
+    padding: 26px 22px;
   }
 }
 

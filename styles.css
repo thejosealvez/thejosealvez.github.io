@@ -1136,7 +1136,7 @@ button:hover {
 
 .fitness-header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("assets/images/fragrance-banner.png");
+    url("assets/images/fitness-banner.png");
 
   background-position: center;
 }

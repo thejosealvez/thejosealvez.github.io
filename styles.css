@@ -1079,6 +1079,31 @@ button:hover {
   object-fit: contain;
 }
 
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 360px;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-header p {
+  color: white;
+}
+
+.home-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("assets/images/home-banner.png");
+}
+
 @media (max-width: 600px) {
   nav {
     position: sticky;

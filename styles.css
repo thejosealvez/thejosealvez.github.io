@@ -1138,7 +1138,7 @@ button:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
     url("assets/images/fitness-banner.png");
 
-  background-position: center;
+  background-position: center 65%;
 }
 
 @media (max-width: 600px) {
